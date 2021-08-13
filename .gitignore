@@ -1,0 +1,8 @@
+packages/
+*.user
+.idea/
+bin/
+obj/
+repository/
+*.bin
+*.json
