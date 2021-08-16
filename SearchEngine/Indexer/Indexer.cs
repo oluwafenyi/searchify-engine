@@ -84,7 +84,7 @@ namespace SearchEngine.Indexer
         /// </summary>
         /// <param name="word">any string</param>
         /// <returns>Index list of word</returns>
-        public IndexTerm[] GetIndexList(string word)
+        public IndexTerm[] GetIndexTermArray(string word)
         {
             List<IndexTerm> indexList;
             bool ok = ReverseIndex.TryGetValue(word, out indexList);

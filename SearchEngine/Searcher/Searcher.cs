@@ -4,58 +4,76 @@ using MoreComplexDataStructures;
 
 namespace SearchEngine.Searcher
 {
+    /// <summary>
+    /// Searcher class operates on an indexer
+    /// </summary>
     public class Searcher
     {
         private Indexer.Indexer _indexer;
-        private Dictionary<uint, double> scores = new Dictionary<uint, double>();
+        private Ranker.Ranker _ranker;
 
+        /// <summary>
+        /// Instantiates a Searcher object
+        /// </summary>
+        /// <param name="indexer">instance of <see cref="Indexer.Indexer"/></param>
         public Searcher(Indexer.Indexer indexer)
         {
             _indexer = indexer;
+            _ranker = new Ranker.Ranker(_indexer);
         }
 
-        public void ExecuteQuery(string query)
+        /// <summary>
+        /// Returns a ranked array of file ids associated with a query
+        /// </summary>
+        /// <param name="query">any nonempty string value</param>
+        /// <returns>Ranked array of file ids</returns>
+        public uint[] ExecuteQuery(string query)
         {
             string[] queryTerms = Tokenizer.Tokenizer.Tokenize(query);
-            int[] pointers = new int[queryTerms.Length];
             MinHeap<Pointer> heap = new MinHeap<Pointer>();
 
             // initialize pq
             foreach (var term in queryTerms)
             {
-                heap.Insert(new Pointer(term, 0, _indexer.GetIndexList(term)[0].FileDeltaToUint()));
+                heap.Insert(new Pointer(term, 0, _indexer.GetIndexTermArray(term)[0].FileDeltaToUint()));
             }
             
-            // peek smallest id
-            uint minFileId = heap.Peek().FileId;
-            
-            List<Pointer> currP = new List<Pointer>();
-            
-            // pop all pointers to id
-            while (heap.Peek().FileId == minFileId)
+            while (heap.Count > 0)
             {
-                currP.Add(heap.ExtractMin());
+                // peek smallest id
+                uint minFileId = heap.Peek().FileId;
+            
+                List<Pointer> currP = new List<Pointer>();
+            
+                // pop all pointers to id
+                while (heap.Count > 0 && heap.Peek().FileId == minFileId)
+                {
+                    currP.Add(heap.ExtractMin());
+                }
+            
+                // score
+                _ranker.Score(minFileId, currP);
+            
+                // increment pointers and file ids and deltas
+                foreach (var pointer in currP)
+                {
+                    try
+                    {
+                        var nextPointer = new Pointer(pointer.Term, pointer.P + 1,
+                            _indexer.GetIndexTermArray(pointer.Term)[pointer.P + 1].FileDeltaToUint() + pointer.FileId);
+                        heap.Insert(nextPointer);
+                    }
+                    catch (ArgumentOutOfRangeException)
+                    {
+                    }
+                    catch (IndexOutOfRangeException)
+                    {
+                    }
+                }
             }
             
-            _score(minFileId, currP);
-            
-            
-
-
-
-        }
-
-        // TF IDF Scoring
-        private void _score(uint fileId, List<Pointer> pointerList)
-        {
-            double total = 0;
-            foreach (var pointer in pointerList)
-            {
-                double tf = _indexer.GetIndexList(pointer.Term)[pointer.P].Frequency;
-                double idf = Math.Log(_indexer.LastId / (double) _indexer.GetIndexList(pointer.Term).Length);
-                total += tf * idf;
-            }
-            scores.Add(fileId, total);
+            uint[] resultFileIds = _ranker.RankedResultsList();
+            return resultFileIds;
         }
     }
 }
