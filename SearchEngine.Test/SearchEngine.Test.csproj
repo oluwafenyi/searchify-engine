@@ -33,8 +33,24 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="Microsoft.Dynamic, Version=1.2.2.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1">
+          <HintPath>..\packages\DynamicLanguageRuntime.1.2.2\lib\net45\Microsoft.Dynamic.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Scripting, Version=1.2.2.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1">
+          <HintPath>..\packages\DynamicLanguageRuntime.1.2.2\lib\net45\Microsoft.Scripting.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Scripting.Metadata, Version=1.2.2.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1">
+          <HintPath>..\packages\DynamicLanguageRuntime.1.2.2\lib\net45\Microsoft.Scripting.Metadata.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="MoreComplexDataStructures, Version=1.9.1.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\packages\MoreComplexDataStructures.1.9.1\lib\netstandard2.0\MoreComplexDataStructures.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+          <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="System" />

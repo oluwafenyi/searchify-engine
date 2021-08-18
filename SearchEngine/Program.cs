@@ -15,12 +15,12 @@ namespace SearchEngine
             stopwatch.Stop();
             
             Console.WriteLine("Took " + stopwatch.ElapsedMilliseconds + "ms to load the index");
-
+            
             Searcher.Searcher searcher = new Searcher.Searcher(indexer);
             
             stopwatch.Reset();
             stopwatch.Start();
-            var fileIds = searcher.ExecuteQuery("anklets mariner");
+            var fileIds = searcher.ExecuteQuery("finite state machines");
             stopwatch.Stop();
             
             Console.WriteLine("FileIds: " + string.Join(" ", fileIds));
@@ -30,7 +30,7 @@ namespace SearchEngine
         private static Indexer.Indexer BuildIndex()
         {
             var indexer = new Indexer.Indexer();
-            string[] files = Directory.GetFiles(Path.Combine(Config.HomeDirectory, "repository"))
+            string[] files = Directory.GetFiles(Path.Combine(Config.AppDataDirectory, "repository"))
                 .OrderBy(f => f).ToArray();
             uint id = 1;
             var stopwatch = new Stopwatch();
@@ -55,7 +55,7 @@ namespace SearchEngine
             if (File.Exists(Config.IndexFilePath))
             {
                 indexer = Indexer.Indexer.LoadIndex();
-                string[] files = Directory.GetFiles(Path.Combine(Config.HomeDirectory, "repository"))
+                string[] files = Directory.GetFiles(Path.Combine(Config.AppDataDirectory, "repository"))
                     .OrderBy(f => f).ToArray();
                 if (indexer.LastId != files.Length)
                 {

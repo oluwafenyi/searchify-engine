@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MoreComplexDataStructures;
 using SearchEngine.Searcher;
 
 namespace SearchEngine.Ranker
@@ -55,10 +56,23 @@ namespace SearchEngine.Ranker
         private void _tfIdfScore(uint fileId, List<Pointer> pointerList)
         {
             double total = 0;
+            //
+            MinHeap<ulong> positions = new MinHeap<ulong>();
+            //
+
             foreach (var pointer in pointerList)
             {
                 // normalized term frquency: number of occurences of term in document
                 double tf = _indexer.GetIndexTermArray(pointer.Term)[pointer.P].Frequency;
+                //
+                ulong currentPos = 0;
+                ulong[] pos = _indexer.GetIndexTermArray(pointer.Term)[pointer.P].PositionsToUlongArray();
+                foreach (var posi in pos)
+                {
+                    currentPos += posi;
+                    positions.Insert(currentPos);
+                }
+                //
                 
                 // inverse document frquency: lg(N / df(t))
                 // N : total number of documents
@@ -67,7 +81,32 @@ namespace SearchEngine.Ranker
                 
                 total += tf * idf;
             }
-            _scores.Add(fileId, total);
+
+            //
+            int largestConsecutive = 0;
+            int consecutive = 0;
+            ulong current = positions.ExtractMin();
+            while (positions.Count > 1)
+            {
+                ulong next = positions.ExtractMin();
+                if (next - current <= 1)
+                {
+                    consecutive += 1;
+                    if (consecutive > largestConsecutive)
+                    {
+                        largestConsecutive = consecutive;
+                    }
+                }
+                else
+                {
+                    consecutive = 0;
+                }
+
+                current = next;
+            }
+
+            //
+            _scores.Add(fileId, total + largestConsecutive);
         }
     }
 }

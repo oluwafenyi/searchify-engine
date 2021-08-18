@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using StopWord;
 
 namespace SearchEngine.Tokenizer
 {
@@ -11,7 +10,7 @@ namespace SearchEngine.Tokenizer
     public static class Tokenizer
     {
         private static readonly Stemmer Stemmer = new Stemmer();
-        private static readonly HashSet<string> StopWordsSet = new HashSet<string>(StopWords.GetStopWords("en"));
+        private static readonly HashSet<string> StopWordsSet = Stopwords.LoadStopWords();
 
         /// <summary>
         /// Tokenizes text

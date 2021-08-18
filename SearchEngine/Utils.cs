@@ -17,6 +17,7 @@ namespace SearchEngine
         public static string CleanText(string text)
         {
             text = Regex.Replace(text, @"\s+", " ");
+            text = Regex.Replace(text, "[^A-Za-z0-9 ]", "");
             text = new string(text.Where(c => !char.IsPunctuation(c)).ToArray());
             return text.ToLower();
         }

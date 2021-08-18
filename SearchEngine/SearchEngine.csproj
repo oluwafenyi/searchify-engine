@@ -6,11 +6,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="dotnet-stop-words" Version="1.1.0" />
       <PackageReference Include="InvertedTomato.IntegerCompression" Version="3.0.0" />
-      <PackageReference Include="Json.Net" Version="1.0.33" />
       <PackageReference Include="MoreComplexDataStructures" Version="1.9.1" />
-      <PackageReference Include="OptimizedPriorityQueue" Version="5.1.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
       <PackageReference Include="protobuf-net" Version="3.0.101" />
       <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0-preview.6.21352.12" />
       <PackageReference Include="TikaOnDotNet" Version="1.17.1" />

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using ProtoBuf;
@@ -96,6 +97,12 @@ namespace SearchEngine.Indexer
             return Array.Empty<IndexTerm>();
         }
 
+        // sums up filedeltas in a termlist
+        private uint SumDeltasInTermList(string word)
+        {
+            return (uint) GetIndexTermArray(word).Sum(indexTerm => indexTerm.FileDeltaToUint());
+        }
+
         /// <summary>
         /// Powerhouse function for indexing documents
         /// </summary>
@@ -128,7 +135,7 @@ namespace SearchEngine.Indexer
             // iterate over local map and index word, delta and positions
             foreach (var word in map.Keys)
             {
-                uint delta = fileId - LastId;
+                uint delta = fileId - SumDeltasInTermList(word);
                 _indexWord(word, delta, map[word]);
             }
 
