@@ -15,8 +15,8 @@ namespace SearchEngine.Indexer
         // serialization
         public override void WriteJson(JsonWriter writer, IndexTerm term, JsonSerializer serializer)
         {
-            uint fileDelta = term.FileDeltaToUint();
-            ulong[] positions = term.PositionsToUlongArray();
+            uint fileDelta = term.FileDelta;
+            uint[] positions = term.Positions;
             
             // serialized IndexTerm as a JS Object with the fields fileDelta, positions and frequency
             serializer.Serialize(writer, new Dictionary<string, object>
@@ -34,8 +34,7 @@ namespace SearchEngine.Indexer
             Dictionary<string, object> dict = serializer.Deserialize<Dictionary<string, object>>(reader);
             object obj;
             uint delta = 0;
-            uint frequency = 0;
-            ulong[] positions = new ulong[] { };
+            uint[] positions = new uint[] { };
             if (dict != null)
             {
                 dict.TryGetValue("fileDelta", out obj);
@@ -44,21 +43,14 @@ namespace SearchEngine.Indexer
                     delta = (uint) obj;
                 }
 
-                dict.TryGetValue("frequency", out obj);
-                if (obj != null)
-                {
-                    frequency = (uint) obj;
-                }
-
                 dict.TryGetValue("positions", out obj);
                 if (obj != null)
                 {
-                    positions = (ulong[]) obj;
+                    positions = (uint[]) obj;
                 }
             }
             IndexTerm indexTerm = new IndexTerm(delta);
             indexTerm.AddPositions(positions);
-            indexTerm.Frequency = frequency;
             return indexTerm;
         }
     }

@@ -57,16 +57,16 @@ namespace SearchEngine.Ranker
         {
             double total = 0;
             //
-            MinHeap<ulong> positions = new MinHeap<ulong>();
+            MinHeap<uint> positions = new MinHeap<uint>();
             //
 
             foreach (var pointer in pointerList)
             {
                 // normalized term frquency: number of occurences of term in document
-                double tf = _indexer.GetIndexTermArray(pointer.Term)[pointer.P].Frequency;
+                double tf = _indexer.GetLoadedTermList(pointer.Term)[pointer.P].Frequency;
                 //
-                ulong currentPos = 0;
-                ulong[] pos = _indexer.GetIndexTermArray(pointer.Term)[pointer.P].PositionsToUlongArray();
+                uint currentPos = 0;
+                uint[] pos = _indexer.GetLoadedTermList(pointer.Term)[pointer.P].Positions;
                 foreach (var posi in pos)
                 {
                     currentPos += posi;
@@ -77,7 +77,7 @@ namespace SearchEngine.Ranker
                 // inverse document frquency: lg(N / df(t))
                 // N : total number of documents
                 // df(t): total number of documents that have term t
-                double idf = Math.Log(_indexer.LastId / (double) _indexer.GetIndexTermArray(pointer.Term).Length, 2);
+                double idf = Math.Log(_indexer.LastId / (double) _indexer.GetLoadedTermList(pointer.Term).Length, 2);
                 
                 total += tf * idf;
             }

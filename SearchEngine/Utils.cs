@@ -27,17 +27,17 @@ namespace SearchEngine
         /// </summary>
         /// <param name="list">list of nonnegative integers</param>
         /// <returns>list of delta ulong values</returns>
-        public static List<ulong> ToDeltaList(List<int> list)
+        public static List<uint> ToDeltaList(List<uint> list)
         {
-            List<ulong> output = new List<ulong>();
+            List<uint> output = new List<uint>();
             for (int i = 0; i < list.Count; i++)
             {
                 if (i == 0)
                 {
-                    output.Add((ulong) list[i]);
+                    output.Add(list[i]);
                     continue;
                 }
-                output.Add((ulong) (list[i] - list[i - 1]));
+                output.Add(list[i] - list[i - 1]);
             }
 
             return output;

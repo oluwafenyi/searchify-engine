@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using MoreComplexDataStructures;
+using SearchEngine.Indexer;
 
 namespace SearchEngine.Searcher
 {
@@ -15,7 +17,7 @@ namespace SearchEngine.Searcher
         /// <summary>
         /// Instantiates a Searcher object
         /// </summary>
-        /// <param name="indexer">instance of <see cref="Indexer.Indexer"/></param>
+        /// <param name="indexer">instance of <see cref="Indexer"/></param>
         public Searcher(Indexer.Indexer indexer)
         {
             _indexer = indexer;
@@ -27,15 +29,16 @@ namespace SearchEngine.Searcher
         /// </summary>
         /// <param name="query">any nonempty string value</param>
         /// <returns>Ranked array of file ids</returns>
-        public uint[] ExecuteQuery(string query)
+        public async Task<uint[]> ExecuteQuery(string query)
         {
             string[] queryTerms = Tokenizer.Tokenizer.Tokenize(query);
             MinHeap<Pointer> heap = new MinHeap<Pointer>();
+            await _indexer.LoadInvertedIndex(queryTerms);
 
             // initialize pq
             foreach (var term in queryTerms)
             {
-                heap.Insert(new Pointer(term, 0, _indexer.GetIndexTermArray(term)[0].FileDeltaToUint()));
+                heap.Insert(new Pointer(term, 0, _indexer.GetLoadedTermList(term)[0].FileDelta));
             }
             
             while (heap.Count > 0)
@@ -60,7 +63,7 @@ namespace SearchEngine.Searcher
                     try
                     {
                         var nextPointer = new Pointer(pointer.Term, pointer.P + 1,
-                            _indexer.GetIndexTermArray(pointer.Term)[pointer.P + 1].FileDeltaToUint() + pointer.FileId);
+                            _indexer.GetLoadedTermList(pointer.Term)[pointer.P + 1].FileDelta + pointer.FileId);
                         heap.Insert(nextPointer);
                     }
                     catch (ArgumentOutOfRangeException)

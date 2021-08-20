@@ -2,16 +2,39 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
+using SearchEngine.Database;
+using SearchEngine.Database.Models;
 
 namespace SearchEngine
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
+            Task.Run(async () =>
+            {
+                await MainAsync(args);
+            }).GetAwaiter().GetResult();
+        }
+
+        static async Task MainAsync(string[] args)
+        {
+            DbClient.CreateClient(true);
+            await DbClient.CreateTables();
+
+            // Console.WriteLine(InvertedIndex.CheckTermIndexed("assign"));
+            // uint lastId = await InvertedIndex.GetLastId();
+            // Console.WriteLine(lastId);
+            // Indexer.Indexer indexer = new Indexer.Indexer(lastId);
+            // foreach (var indexTerm in indexer.GetIndexTermArray("assign"))
+            // {
+            //     Console.WriteLine(indexTerm.FileDelta);
+            // }
+
             var stopwatch = new Stopwatch();
             stopwatch.Start();
-            Indexer.Indexer indexer = LoadIndex();
+            Indexer.Indexer indexer = await LoadIndex();
             stopwatch.Stop();
             
             Console.WriteLine("Took " + stopwatch.ElapsedMilliseconds + "ms to load the index");
@@ -20,16 +43,17 @@ namespace SearchEngine
             
             stopwatch.Reset();
             stopwatch.Start();
-            var fileIds = searcher.ExecuteQuery("finite state machines");
+            var fileIds = await searcher.ExecuteQuery("finite state machines");
             stopwatch.Stop();
             
             Console.WriteLine("FileIds: " + string.Join(" ", fileIds));
             Console.WriteLine("Query took " +  stopwatch.ElapsedMilliseconds + "ms");
         }
 
-        private static Indexer.Indexer BuildIndex()
+        private static async Task<Indexer.Indexer> BuildIndex()
         {
-            var indexer = new Indexer.Indexer();
+            uint lastId = await InvertedIndex.GetLastId();
+            var indexer = new Indexer.Indexer(lastId);
             string[] files = Directory.GetFiles(Path.Combine(Config.AppDataDirectory, "repository"))
                 .OrderBy(f => f).ToArray();
             uint id = 1;
@@ -38,34 +62,30 @@ namespace SearchEngine
             {
                 Console.WriteLine("Indexing " + file);
                 stopwatch.Start();
-                indexer.Index(file, id);
+                await indexer.Index(file, id);
                 stopwatch.Stop();
                 Console.WriteLine(stopwatch.ElapsedMilliseconds);
                 stopwatch.Reset();
                 id++;
             }
-            indexer.DumpIndex();
-            indexer.DumpJson();
+            
             return indexer;
         }
 
-        private static Indexer.Indexer LoadIndex()
+        private static async Task<Indexer.Indexer> LoadIndex()
         {
             Indexer.Indexer indexer;
-            if (File.Exists(Config.IndexFilePath))
+            uint lastId = await InvertedIndex.GetLastId();
+            uint fileCount = (uint) Directory.GetFiles(Path.Combine(Config.AppDataDirectory, "repository")).Length;
+            if (lastId != fileCount)
             {
-                indexer = Indexer.Indexer.LoadIndex();
-                string[] files = Directory.GetFiles(Path.Combine(Config.AppDataDirectory, "repository"))
-                    .OrderBy(f => f).ToArray();
-                if (indexer.LastId != files.Length)
-                {
-                    indexer = BuildIndex();
-                }
+                indexer = await BuildIndex();
             }
             else
             {
-                indexer = BuildIndex();
+                indexer = new Indexer.Indexer(lastId);
             }
+            
             return indexer;
         }
     }
