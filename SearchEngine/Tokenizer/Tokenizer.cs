@@ -20,7 +20,7 @@ namespace SearchEngine.Tokenizer
         public static string[] Tokenize(string text)
         {
             string cleanedText = Utils.CleanText(text);
-            var tokens = cleanedText.Split(null)
+            var tokens = cleanedText.Split(' ')
                 .Where(word => !StopWordsSet.Contains(word) && word != "")
                 .Select(word => Stemmer.StemWord(word));
             return tokens.ToArray();

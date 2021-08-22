@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace SearchEngine
@@ -16,10 +15,9 @@ namespace SearchEngine
         /// <returns>cleaned text</returns>
         public static string CleanText(string text)
         {
+            text = Regex.Replace(text, "[^A-Za-z0-9 ]", " ").ToLower();
             text = Regex.Replace(text, @"\s+", " ");
-            text = Regex.Replace(text, "[^A-Za-z0-9 ]", "");
-            text = new string(text.Where(c => !char.IsPunctuation(c)).ToArray());
-            return text.ToLower();
+            return text;
         }
 
         /// <summary>
