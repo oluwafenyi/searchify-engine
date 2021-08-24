@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using SearchifyEngine.Database;
-using SearchifyEngine.Database.Models;
+using SearchifyEngine.Store;
 
 namespace SearchifyEngine
 {
@@ -22,6 +22,7 @@ namespace SearchifyEngine
         {
             DbClient.CreateClient(true);
             await DbClient.CreateTables();
+            IStore store = DbClient.Store;
 
             // Console.WriteLine(InvertedIndex.CheckTermIndexed("assign"));
             // uint lastId = await InvertedIndex.GetLastId();
@@ -34,7 +35,7 @@ namespace SearchifyEngine
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
-            Indexer.Indexer indexer = await LoadIndex();
+            Indexer.Indexer indexer = await LoadIndex(store);
             stopwatch.Stop();
             
             Console.WriteLine("Took " + stopwatch.ElapsedMilliseconds + "ms to load the index");
@@ -50,10 +51,9 @@ namespace SearchifyEngine
             Console.WriteLine("Query took " +  stopwatch.ElapsedMilliseconds + "ms");
         }
 
-        private static async Task<Indexer.Indexer> BuildIndex()
+        private static async Task<Indexer.Indexer> BuildIndex(IStore store)
         {
-            uint lastId = await InvertedIndex.GetLastId();
-            var indexer = new Indexer.Indexer(lastId);
+            var indexer = new Indexer.Indexer(store);
             string[] files = Directory.GetFiles(Path.Combine(Config.AppDataDirectory, "repository"))
                 .OrderBy(f => f).ToArray();
             uint id = 1;
@@ -72,18 +72,18 @@ namespace SearchifyEngine
             return indexer;
         }
 
-        private static async Task<Indexer.Indexer> LoadIndex()
+        private static async Task<Indexer.Indexer> LoadIndex(IStore store)
         {
             Indexer.Indexer indexer;
-            uint lastId = await InvertedIndex.GetLastId();
+            uint lastId = await store.GetLastId();
             uint fileCount = (uint) Directory.GetFiles(Path.Combine(Config.AppDataDirectory, "repository")).Length;
             if (lastId != fileCount)
             {
-                indexer = await BuildIndex();
+                indexer = await BuildIndex(store);
             }
             else
             {
-                indexer = new Indexer.Indexer(lastId);
+                indexer = new Indexer.Indexer(store);
             }
             
             return indexer;

@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
-using SearchifyEngine.Database.Models;
+using SearchifyEngine.Store;
 
 namespace SearchifyEngine.Database
 {
@@ -15,7 +14,9 @@ namespace SearchifyEngine.Database
         private static readonly string Host = Config.DatabaseHost;
         private static readonly int Port = Config.DatabasePort;
         private static readonly string EndpointUrl = "http://" + Host + ":" + Port;
+        
         public static AmazonDynamoDBClient Client;
+        public static InvertedIndexDynamoDbStore Store;
 
         private static bool IsPortInUse()
         {
@@ -63,6 +64,7 @@ namespace SearchifyEngine.Database
                 Client = new AmazonDynamoDBClient();
             }
 
+            Store = new InvertedIndexDynamoDbStore(Client);
             return true;
         }
 
@@ -124,7 +126,7 @@ namespace SearchifyEngine.Database
 
             if (status)
             {
-                await InvertedIndex.SetLastId(0);
+                await Store.SetLastId(0);
             }
         }
 

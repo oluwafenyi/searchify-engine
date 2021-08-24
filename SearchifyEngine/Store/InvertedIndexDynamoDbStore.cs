@@ -6,11 +6,18 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using SearchifyEngine.Indexer;
 
-namespace SearchifyEngine.Database.Models
+namespace SearchifyEngine.Store
 {
-    public class InvertedIndex
+    public class InvertedIndexDynamoDbStore: IStore
     {
-        public static async Task<uint> GetLastId()
+        private AmazonDynamoDBClient _client;
+
+        public InvertedIndexDynamoDbStore(AmazonDynamoDBClient client)
+        {
+            _client = client;
+        }
+        
+        public async Task<uint> GetLastId()
         {
             Dictionary<string, AttributeValue> key = new Dictionary<string, AttributeValue>
             {
@@ -20,12 +27,12 @@ namespace SearchifyEngine.Database.Models
             var request = new GetItemRequest { TableName = "inverted_index", Key = key };
 
             GetItemResponse response;
-            response = await DbClient.Client.GetItemAsync(request);
+            response = await _client.GetItemAsync(request);
             Dictionary<string, AttributeValue> item = response.Item;
             return UInt32.Parse(item["id"].N);
         }
         
-        public static async Task<PutItemResponse> SetLastId(uint lastId)
+        public async Task<HttpStatusCode> SetLastId(uint lastId)
         {
             Dictionary<string, AttributeValue> attributes = new Dictionary<string, AttributeValue>
             {
@@ -39,10 +46,11 @@ namespace SearchifyEngine.Database.Models
                 Item = attributes
             };
 
-            return await DbClient.Client.PutItemAsync(request);
+            var response = await _client.PutItemAsync(request);
+            return response.HttpStatusCode;
         }
 
-        public async static Task<bool> CheckTermIndexed(string term)
+        public async Task<bool> CheckTermIndexed(string term)
         {
             Dictionary<string, AttributeValue> key = new Dictionary<string, AttributeValue>
             {
@@ -53,7 +61,7 @@ namespace SearchifyEngine.Database.Models
 
             try
             {
-                var response = await DbClient.Client.GetItemAsync(request);
+                var response = await _client.GetItemAsync(request);
                 Dictionary<string, AttributeValue> item = response.Item;
                 return item["TermList"].L != null;
             }
@@ -63,7 +71,7 @@ namespace SearchifyEngine.Database.Models
             }
         }
         
-         public static async Task<HttpStatusCode> AppendIndexTerm(string term, IndexTerm indexTerm)
+         public async Task<HttpStatusCode> AppendIndexTerm(string term, IndexTerm indexTerm)
          {
              List<AttributeValue> positionsAttrs = new List<AttributeValue>();
             
@@ -99,7 +107,7 @@ namespace SearchifyEngine.Database.Models
                     Item = attributes
                 };
 
-                var response = await DbClient.Client.PutItemAsync(request);
+                var response = await _client.PutItemAsync(request);
                 
                 return response.HttpStatusCode;
             }
@@ -139,13 +147,13 @@ namespace SearchifyEngine.Database.Models
                     AttributeUpdates = updates
                 };
 
-                var response = await DbClient.Client.UpdateItemAsync(request);
+                var response = await _client.UpdateItemAsync(request);
                 
                 return response.HttpStatusCode;
             }
          }
 
-        public static async Task<List<IndexTerm>> GetIndexTermList(string term)
+        public async Task<List<IndexTerm>> GetIndexTermList(string term)
         {
             List<IndexTerm> indexTerms = new List<IndexTerm>();
             
@@ -158,7 +166,7 @@ namespace SearchifyEngine.Database.Models
 
             try
             {
-                var response = await DbClient.Client.GetItemAsync(request);
+                var response = await _client.GetItemAsync(request);
                 Dictionary<string, AttributeValue> item = response.Item;
                 foreach (var attributeValue in item["TermList"].L)
                 {

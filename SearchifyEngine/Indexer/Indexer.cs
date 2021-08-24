@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SearchifyEngine.Database.Models;
+using SearchifyEngine.Store;
 using TikaOnDotNet.TextExtraction;
 
 namespace SearchifyEngine.Indexer
@@ -20,7 +20,18 @@ namespace SearchifyEngine.Indexer
         
         private TextExtractor _textExtractor = new TextExtractor();
 
+        private IStore _store;
+
         public Dictionary<string, IndexTerm[]> ReverseIndex = new Dictionary<string, IndexTerm[]>();
+        
+        public Indexer(IStore store)
+        {
+            _store = store;
+            Task.Run(async () =>
+            {
+                LastId = await store.GetLastId();
+            }).GetAwaiter().GetResult();
+        }
 
         public async Task LoadInvertedIndex(string[] queryTerms)
         {
@@ -37,12 +48,6 @@ namespace SearchifyEngine.Indexer
             return ReverseIndex[term];
         }
 
-        public Indexer(uint lastId)
-        {
-            LastId = lastId;
-        }
-        
-
         // initializes and appends index term to internal index
         private async Task _indexWord(string word, uint fileId, List<uint> positions)
         {
@@ -50,7 +55,7 @@ namespace SearchifyEngine.Indexer
             indexTerm = new IndexTerm(fileId);
             List<uint> deltaArrayList = Utils.ToDeltaList(positions);
             indexTerm.AddPositions(deltaArrayList.ToArray());
-            await InvertedIndex.AppendIndexTerm(word, indexTerm);
+            await _store.AppendIndexTerm(word, indexTerm);
         }
 
         /// <summary>
@@ -60,7 +65,7 @@ namespace SearchifyEngine.Indexer
         /// <returns>Index list of word</returns>
         public async Task<IndexTerm[]> GetIndexTermArray(string word)
         {
-            List<IndexTerm> list = await InvertedIndex.GetIndexTermList(word);
+            List<IndexTerm> list = await _store.GetIndexTermList(word);
             return list.ToArray();
         }
 
@@ -109,7 +114,7 @@ namespace SearchifyEngine.Indexer
             }
 
             LastId = fileId;
-            await InvertedIndex.SetLastId(fileId);
+            await _store.SetLastId(fileId);
         }
     }
 }
