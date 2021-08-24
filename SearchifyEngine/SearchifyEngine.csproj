@@ -12,7 +12,6 @@
       <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
       <PackageReference Include="protobuf-net" Version="3.0.101" />
       <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0-preview.6.21352.12" />
-      <PackageReference Include="TikaOnDotNet" Version="1.17.1" />
       <PackageReference Include="TikaOnDotnet.TextExtractor" Version="1.17.1" />
     </ItemGroup>
 

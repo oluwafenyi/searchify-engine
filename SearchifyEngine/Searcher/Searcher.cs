@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MoreComplexDataStructures;
-using SearchEngine.Indexer;
+using SearchifyEngine.Indexer;
 
-namespace SearchEngine.Searcher
+namespace SearchifyEngine.Searcher
 {
     /// <summary>
     /// Searcher class operates on an indexer

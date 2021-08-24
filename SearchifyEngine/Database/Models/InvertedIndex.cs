@@ -4,9 +4,9 @@ using System.Net;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
-using SearchEngine.Indexer;
+using SearchifyEngine.Indexer;
 
-namespace SearchEngine.Database.Models
+namespace SearchifyEngine.Database.Models
 {
     public class InvertedIndex
     {
@@ -42,7 +42,7 @@ namespace SearchEngine.Database.Models
             return await DbClient.Client.PutItemAsync(request);
         }
 
-        public static bool CheckTermIndexed(string term)
+        public async static Task<bool> CheckTermIndexed(string term)
         {
             Dictionary<string, AttributeValue> key = new Dictionary<string, AttributeValue>
             {
@@ -53,7 +53,7 @@ namespace SearchEngine.Database.Models
 
             try
             {
-                var response = DbClient.Client.GetItem(request);
+                var response = await DbClient.Client.GetItemAsync(request);
                 Dictionary<string, AttributeValue> item = response.Item;
                 return item["TermList"].L != null;
             }
@@ -72,7 +72,7 @@ namespace SearchEngine.Database.Models
                 positionsAttrs.Add(new AttributeValue{ N = indexTermPosition.ToString() });
             }
 
-            if (!CheckTermIndexed(term))
+            if (!await CheckTermIndexed(term))
             {
                 Dictionary<string, AttributeValue> attributes = new Dictionary<string, AttributeValue>
                 {

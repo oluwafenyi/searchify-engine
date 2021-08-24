@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SearchEngine.Tokenizer
+namespace SearchifyEngine.Tokenizer
 {
     
     /// <summary>

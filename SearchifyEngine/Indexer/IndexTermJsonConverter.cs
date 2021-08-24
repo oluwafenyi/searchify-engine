@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace SearchEngine.Indexer
+namespace SearchifyEngine.Indexer
 {
     /// <summary>
     /// Custom converter class to aid the serialization of <see cref="IndexTerm"/> to JSON
@@ -42,7 +42,7 @@ namespace SearchEngine.Indexer
                 {
                     delta = (uint) obj;
                 }
-
+        
                 dict.TryGetValue("positions", out obj);
                 if (obj != null)
                 {

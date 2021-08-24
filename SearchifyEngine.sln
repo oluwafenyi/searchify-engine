@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchEngine", "SearchEngine\SearchEngine.csproj", "{15C82D51-9718-4CDE-AFD3-02806A3BBE00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchifyEngine", "SearchifyEngine\SearchifyEngine.csproj", "{15C82D51-9718-4CDE-AFD3-02806A3BBE00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchEngine.Test", "SearchEngine.Test\SearchEngine.Test.csproj", "{387A9660-47B8-4112-B713-5F162563751C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchifyEngine.Test", "SearchifyEngine.Test\SearchifyEngine.Test.csproj", "{387A9660-47B8-4112-B713-5F162563751C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

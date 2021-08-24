@@ -3,10 +3,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using SearchEngine.Database;
-using SearchEngine.Database.Models;
+using SearchifyEngine.Database;
+using SearchifyEngine.Database.Models;
 
-namespace SearchEngine
+namespace SearchifyEngine
 {
     static class Program
     {

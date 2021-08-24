@@ -8,8 +8,8 @@
         <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>SearchEngine.Test</RootNamespace>
-        <AssemblyName>SearchEngine.Test</AssemblyName>
+        <RootNamespace>SearchifyEngine.Test</RootNamespace>
+        <AssemblyName>SearchifyEngine.Test</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -74,9 +74,9 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\SearchEngine\SearchEngine.csproj">
+      <ProjectReference Include="..\SearchifyEngine\SearchifyEngine.csproj">
         <Project>{15c82d51-9718-4cde-afd3-02806a3bbe00}</Project>
-        <Name>SearchEngine</Name>
+        <Name>SearchifyEngine</Name>
       </ProjectReference>
     </ItemGroup>
     <ItemGroup>

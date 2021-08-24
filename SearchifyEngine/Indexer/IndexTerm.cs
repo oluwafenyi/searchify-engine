@@ -1,9 +1,7 @@
-using System;
 using System.IO;
 using System.Linq;
-using ProtoBuf;
 
-namespace SearchEngine.Indexer
+namespace SearchifyEngine.Indexer
 {
     /// <summary>
     /// Index term representation, stores file delta, frequency and positions of word

@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MoreComplexDataStructures;
-using SearchEngine.Searcher;
+using SearchifyEngine.Searcher;
 
-namespace SearchEngine.Ranker
+namespace SearchifyEngine.Ranker
 {
     
     /// <summary>

@@ -1,6 +1,6 @@
 using System;
 
-namespace SearchEngine.Tokenizer
+namespace SearchifyEngine.Tokenizer
 {
 public class Stemmer
     {

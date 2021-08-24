@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SearchEngine.Tokenizer
+namespace SearchifyEngine.Tokenizer
 {
     public static class Stopwords
     {

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace SearchEngine.Tokenizer
+namespace SearchifyEngine.Tokenizer
 {
     public class PorterStemmer
     {

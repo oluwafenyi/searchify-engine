@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace SearchEngine.Test
+namespace SearchifyEngine.Test
 {
     [TestFixture]
     public class UtilsTests

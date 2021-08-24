@@ -1,6 +1,6 @@
 using System;
 
-namespace SearchEngine.Searcher
+namespace SearchifyEngine.Searcher
 {
     /// <summary>
     /// Search Pointer object aids the k-way linear merge algorithm by storing the pointer to each index term being

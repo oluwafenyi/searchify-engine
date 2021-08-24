@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SearchEngine.Database.Models;
+using SearchifyEngine.Database.Models;
 using TikaOnDotNet.TextExtraction;
 
-namespace SearchEngine.Indexer
+namespace SearchifyEngine.Indexer
 {
 
     /// <summary>

@@ -6,9 +6,9 @@ using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
-using SearchEngine.Database.Models;
+using SearchifyEngine.Database.Models;
 
-namespace SearchEngine.Database
+namespace SearchifyEngine.Database
 {
     public static class DbClient
     {

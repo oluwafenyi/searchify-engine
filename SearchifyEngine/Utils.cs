@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace SearchEngine
+namespace SearchifyEngine
 {
     /// <summary>
     /// Static class housing a number of utility methods
