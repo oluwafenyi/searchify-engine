@@ -10,6 +10,8 @@ namespace SearchifyEngine
 {
     static class Program
     {
+        private static string _directory = "";
+        
         static void Main(string[] args)
         {
             Task.Run(async () =>
@@ -54,7 +56,7 @@ namespace SearchifyEngine
         private static async Task<Indexer.Indexer> BuildIndex(IStore store)
         {
             var indexer = new Indexer.Indexer(store);
-            string[] files = Directory.GetFiles(Path.Combine(Config.AppDataDirectory, "repository"))
+            string[] files = Directory.GetFiles(_directory)
                 .OrderBy(f => f).ToArray();
             uint id = 1;
             var stopwatch = new Stopwatch();
@@ -76,7 +78,7 @@ namespace SearchifyEngine
         {
             Indexer.Indexer indexer;
             uint lastId = await store.GetLastId();
-            uint fileCount = (uint) Directory.GetFiles(Path.Combine(Config.AppDataDirectory, "repository")).Length;
+            uint fileCount = (uint) Directory.GetFiles(_directory).Length;
             if (lastId != fileCount)
             {
                 indexer = await BuildIndex(store);
