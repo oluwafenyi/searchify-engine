@@ -25,11 +25,19 @@ namespace SearchifyEngine.Store
             };
 
             var request = new GetItemRequest { TableName = "inverted_index", Key = key };
-
             GetItemResponse response;
             response = await _client.GetItemAsync(request);
             Dictionary<string, AttributeValue> item = response.Item;
-            return UInt32.Parse(item["id"].N);
+            
+            try
+            {
+                return UInt32.Parse(item["id"].N);
+
+            }
+            catch (KeyNotFoundException e)
+            {
+                return 0;
+            }
         }
         
         public async Task<HttpStatusCode> SetLastId(uint lastId)
