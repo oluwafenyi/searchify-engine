@@ -10,3 +10,4 @@ _site_pdf/
 /**/packages/
 /**/bin/
 /**/obj/
+/**/SearchifyEngine.*.yml
