@@ -57,6 +57,16 @@ namespace SearchifyEngine.Searcher
             return 1;
         }
 
+        /// <summary>
+        /// IComparable Pointer implementation
+        /// </summary>
+        /// <param name="other">Pointer object for comparison</param>
+        /// <returns>
+        /// 1 when this.FileId gt other.FileId
+        /// -1 when this.FileId lt other.FileId
+        /// 0 otherwise
+        /// </returns>
+        /// <exception cref="ArgumentException">Raised when comparing with null</exception>
         public int CompareTo(Pointer other)
         {
             if (other.GetType() != typeof(Pointer))

@@ -1,0 +1,649 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchifyEngine.Indexer.Indexer
+  commentId: T:SearchifyEngine.Indexer.Indexer
+  id: Indexer
+  parent: SearchifyEngine.Indexer
+  children:
+  - SearchifyEngine.Indexer.Indexer.#ctor(SearchifyEngine.Store.IStore)
+  - SearchifyEngine.Indexer.Indexer.GetLoadedTermList(System.String)
+  - SearchifyEngine.Indexer.Indexer.Index(System.String,System.UInt32)
+  - SearchifyEngine.Indexer.Indexer.LastId
+  - SearchifyEngine.Indexer.Indexer.LoadInvertedIndex(System.String[])
+  langs:
+  - csharp
+  - vb
+  name: Indexer
+  nameWithType: Indexer
+  fullName: SearchifyEngine.Indexer.Indexer
+  type: Class
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/Indexer.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: Indexer
+    path: ../SearchifyEngine/Indexer/Indexer.cs
+    startLine: 13
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nIndexer class builds and maintains internal search index\n"
+  example: []
+  syntax:
+    content: public class Indexer
+    content.vb: Public Class Indexer
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: SearchifyEngine.Indexer.Indexer.LastId
+  commentId: F:SearchifyEngine.Indexer.Indexer.LastId
+  id: LastId
+  parent: SearchifyEngine.Indexer.Indexer
+  langs:
+  - csharp
+  - vb
+  name: LastId
+  nameWithType: Indexer.LastId
+  fullName: SearchifyEngine.Indexer.Indexer.LastId
+  type: Field
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/Indexer.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: LastId
+    path: ../SearchifyEngine/Indexer/Indexer.cs
+    startLine: 19
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nLast File ID indexed\n"
+  example: []
+  syntax:
+    content: public uint LastId
+    return:
+      type: System.UInt32
+    content.vb: Public LastId As UInteger
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchifyEngine.Indexer.Indexer.#ctor(SearchifyEngine.Store.IStore)
+  commentId: M:SearchifyEngine.Indexer.Indexer.#ctor(SearchifyEngine.Store.IStore)
+  id: '#ctor(SearchifyEngine.Store.IStore)'
+  parent: SearchifyEngine.Indexer.Indexer
+  langs:
+  - csharp
+  - vb
+  name: Indexer(IStore)
+  nameWithType: Indexer.Indexer(IStore)
+  fullName: SearchifyEngine.Indexer.Indexer.Indexer(SearchifyEngine.Store.IStore)
+  type: Constructor
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/Indexer.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: .ctor
+    path: ../SearchifyEngine/Indexer/Indexer.cs
+    startLine: 34
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nInstantiates an Indexer object\n"
+  example: []
+  syntax:
+    content: public Indexer(IStore store)
+    parameters:
+    - id: store
+      type: SearchifyEngine.Store.IStore
+      description: object that implements <xref href="SearchifyEngine.Store.IStore" data-throw-if-not-resolved="false"></xref>>
+    content.vb: Public Sub New(store As IStore)
+  overload: SearchifyEngine.Indexer.Indexer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchifyEngine.Indexer.Indexer.LoadInvertedIndex(System.String[])
+  commentId: M:SearchifyEngine.Indexer.Indexer.LoadInvertedIndex(System.String[])
+  id: LoadInvertedIndex(System.String[])
+  parent: SearchifyEngine.Indexer.Indexer
+  langs:
+  - csharp
+  - vb
+  name: LoadInvertedIndex(String[])
+  nameWithType: Indexer.LoadInvertedIndex(String[])
+  fullName: SearchifyEngine.Indexer.Indexer.LoadInvertedIndex(System.String[])
+  type: Method
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/Indexer.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: LoadInvertedIndex
+    path: ../SearchifyEngine/Indexer/Indexer.cs
+    startLine: 47
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nCaches terms from store\n"
+  example: []
+  syntax:
+    content: public async Task LoadInvertedIndex(string[] terms)
+    parameters:
+    - id: terms
+      type: System.String[]
+      description: array of terms
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function LoadInvertedIndex(terms As String()) As Task
+  overload: SearchifyEngine.Indexer.Indexer.LoadInvertedIndex*
+  nameWithType.vb: Indexer.LoadInvertedIndex(String())
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: SearchifyEngine.Indexer.Indexer.LoadInvertedIndex(System.String())
+  name.vb: LoadInvertedIndex(String())
+- uid: SearchifyEngine.Indexer.Indexer.GetLoadedTermList(System.String)
+  commentId: M:SearchifyEngine.Indexer.Indexer.GetLoadedTermList(System.String)
+  id: GetLoadedTermList(System.String)
+  parent: SearchifyEngine.Indexer.Indexer
+  langs:
+  - csharp
+  - vb
+  name: GetLoadedTermList(String)
+  nameWithType: Indexer.GetLoadedTermList(String)
+  fullName: SearchifyEngine.Indexer.Indexer.GetLoadedTermList(System.String)
+  type: Method
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/Indexer.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: GetLoadedTermList
+    path: ../SearchifyEngine/Indexer/Indexer.cs
+    startLine: 62
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nReturns array of index terms from cache. If term hasn&apos;t been cached, an empty array is returned.\n"
+  example: []
+  syntax:
+    content: public IndexTerm[] GetLoadedTermList(string term)
+    parameters:
+    - id: term
+      type: System.String
+      description: term
+    return:
+      type: SearchifyEngine.Indexer.IndexTerm[]
+      description: array of index terms
+    content.vb: Public Function GetLoadedTermList(term As String) As IndexTerm()
+  overload: SearchifyEngine.Indexer.Indexer.GetLoadedTermList*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchifyEngine.Indexer.Indexer.Index(System.String,System.UInt32)
+  commentId: M:SearchifyEngine.Indexer.Indexer.Index(System.String,System.UInt32)
+  id: Index(System.String,System.UInt32)
+  parent: SearchifyEngine.Indexer.Indexer
+  langs:
+  - csharp
+  - vb
+  name: Index(String, UInt32)
+  nameWithType: Indexer.Index(String, UInt32)
+  fullName: SearchifyEngine.Indexer.Indexer.Index(System.String, System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/Indexer.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: Index
+    path: ../SearchifyEngine/Indexer/Indexer.cs
+    startLine: 102
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nPowerhouse function for indexing documents\n"
+  example: []
+  syntax:
+    content: public async Task Index(string fileUrl, uint fileId)
+    parameters:
+    - id: fileUrl
+      type: System.String
+      description: a path or link to an indexable document
+    - id: fileId
+      type: System.UInt32
+      description: unique integer id for document
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function Index(fileUrl As String, fileId As UInteger) As Task
+  overload: SearchifyEngine.Indexer.Indexer.Index*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+references:
+- uid: SearchifyEngine.Indexer
+  commentId: N:SearchifyEngine.Indexer
+  name: SearchifyEngine.Indexer
+  nameWithType: SearchifyEngine.Indexer
+  fullName: SearchifyEngine.Indexer
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: SearchifyEngine.Store.IStore
+  commentId: T:SearchifyEngine.Store.IStore
+  parent: SearchifyEngine.Store
+  name: IStore
+  nameWithType: IStore
+  fullName: SearchifyEngine.Store.IStore
+- uid: SearchifyEngine.Indexer.Indexer.#ctor*
+  commentId: Overload:SearchifyEngine.Indexer.Indexer.#ctor
+  name: Indexer
+  nameWithType: Indexer.Indexer
+  fullName: SearchifyEngine.Indexer.Indexer.Indexer
+- uid: SearchifyEngine.Store
+  commentId: N:SearchifyEngine.Store
+  name: SearchifyEngine.Store
+  nameWithType: SearchifyEngine.Store
+  fullName: SearchifyEngine.Store
+- uid: SearchifyEngine.Indexer.Indexer.LoadInvertedIndex*
+  commentId: Overload:SearchifyEngine.Indexer.Indexer.LoadInvertedIndex
+  name: LoadInvertedIndex
+  nameWithType: Indexer.LoadInvertedIndex
+  fullName: SearchifyEngine.Indexer.Indexer.LoadInvertedIndex
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: SearchifyEngine.Indexer.Indexer.GetLoadedTermList*
+  commentId: Overload:SearchifyEngine.Indexer.Indexer.GetLoadedTermList
+  name: GetLoadedTermList
+  nameWithType: Indexer.GetLoadedTermList
+  fullName: SearchifyEngine.Indexer.Indexer.GetLoadedTermList
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: SearchifyEngine.Indexer.IndexTerm[]
+  isExternal: true
+  name: IndexTerm[]
+  nameWithType: IndexTerm[]
+  fullName: SearchifyEngine.Indexer.IndexTerm[]
+  nameWithType.vb: IndexTerm()
+  fullName.vb: SearchifyEngine.Indexer.IndexTerm()
+  name.vb: IndexTerm()
+  spec.csharp:
+  - uid: SearchifyEngine.Indexer.IndexTerm
+    name: IndexTerm
+    nameWithType: IndexTerm
+    fullName: SearchifyEngine.Indexer.IndexTerm
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: SearchifyEngine.Indexer.IndexTerm
+    name: IndexTerm
+    nameWithType: IndexTerm
+    fullName: SearchifyEngine.Indexer.IndexTerm
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: SearchifyEngine.Indexer.Indexer.Index*
+  commentId: Overload:SearchifyEngine.Indexer.Indexer.Index
+  name: Index
+  nameWithType: Indexer.Index
+  fullName: SearchifyEngine.Indexer.Indexer.Index

@@ -68,8 +68,16 @@
         <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
             <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
         </Reference>
+        <Reference Include="TikaOnDotNet.TextExtraction, Version=1.17.1.0, Culture=neutral, PublicKeyToken=fd70f0f601f583f3">
+          <HintPath>..\..\..\.nuget\packages\tikaondotnet.textextractor\1.17.1\lib\TikaOnDotNet.TextExtraction.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="ExtractDocTests.cs" />
+        <Compile Include="IndexerTests.cs" />
+        <Compile Include="InvertedIndexMemoryStoreTests.cs" />
+        <Compile Include="SearcherTests.cs" />
+        <Compile Include="TokenizerTests.cs" />
         <Compile Include="UtilsTests.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

@@ -8,15 +8,27 @@ using SearchifyEngine.Indexer;
 
 namespace SearchifyEngine.Store
 {
+    
+    /// <summary>
+    /// Inverted Index Store for DynamoDB. Provides methods for CRU operations on the Inverted Index in DynamoDB
+    /// </summary>
     public class InvertedIndexDynamoDbStore: IStore
     {
         private AmazonDynamoDBClient _client;
 
+        /// <summary>
+        /// Instantiates a new InvertedIndexDynamoDbStore object
+        /// </summary>
+        /// <param name="client">dynamodb client</param>
         public InvertedIndexDynamoDbStore(AmazonDynamoDBClient client)
         {
             _client = client;
         }
         
+        /// <summary>
+        /// Returns the id of last file indexed, zero if no file was indexed.
+        /// </summary>
+        /// <returns>id of last file indexed</returns>
         public async Task<uint> GetLastId()
         {
             Dictionary<string, AttributeValue> key = new Dictionary<string, AttributeValue>
@@ -25,6 +37,7 @@ namespace SearchifyEngine.Store
             };
 
             var request = new GetItemRequest { TableName = "inverted_index", Key = key };
+
             GetItemResponse response;
             response = await _client.GetItemAsync(request);
             Dictionary<string, AttributeValue> item = response.Item;
@@ -32,14 +45,18 @@ namespace SearchifyEngine.Store
             try
             {
                 return UInt32.Parse(item["id"].N);
-
             }
-            catch (KeyNotFoundException e)
+            catch (KeyNotFoundException)
             {
                 return 0;
             }
         }
         
+        /// <summary>
+        /// Sets the value of the last document indexed
+        /// </summary>
+        /// <param name="lastId">document id</param>
+        /// <returns>status code for operation</returns>
         public async Task<HttpStatusCode> SetLastId(uint lastId)
         {
             Dictionary<string, AttributeValue> attributes = new Dictionary<string, AttributeValue>
@@ -58,6 +75,11 @@ namespace SearchifyEngine.Store
             return response.HttpStatusCode;
         }
 
+        /// <summary>
+        /// Checks if a term has been indexed
+        /// </summary>
+        /// <param name="term">term</param>
+        /// <returns>true if term has been indexed, else false</returns>
         public async Task<bool> CheckTermIndexed(string term)
         {
             Dictionary<string, AttributeValue> key = new Dictionary<string, AttributeValue>
@@ -79,6 +101,13 @@ namespace SearchifyEngine.Store
             }
         }
         
+        /// <summary>
+        /// Appends to list of index terms for a particular term. If the term has not been indexed yet, a new list is
+        /// instantiated and the term is then appended
+        /// </summary>
+        /// <param name="term">term</param>
+        /// <param name="indexTerm"><see cref="IndexTerm"/> object</param>
+        /// <returns>status code of operation</returns>
          public async Task<HttpStatusCode> AppendIndexTerm(string term, IndexTerm indexTerm)
          {
              List<AttributeValue> positionsAttrs = new List<AttributeValue>();
@@ -161,6 +190,11 @@ namespace SearchifyEngine.Store
             }
          }
 
+        /// <summary>
+        /// Returns index term list for a particular term. An empty list is returned if the term has not been indexed
+        /// </summary>
+        /// <param name="term">term</param>
+        /// <returns>list of <see cref="IndexTerm"/> objects</returns>
         public async Task<List<IndexTerm>> GetIndexTermList(string term)
         {
             List<IndexTerm> indexTerms = new List<IndexTerm>();

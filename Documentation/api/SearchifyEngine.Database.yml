@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchifyEngine.Database
+  commentId: N:SearchifyEngine.Database
+  id: SearchifyEngine.Database
+  children:
+  - SearchifyEngine.Database.DbClient
+  langs:
+  - csharp
+  - vb
+  name: SearchifyEngine.Database
+  nameWithType: SearchifyEngine.Database
+  fullName: SearchifyEngine.Database
+  type: Namespace
+  assemblies:
+  - SearchifyEngine
+references:
+- uid: SearchifyEngine.Database.DbClient
+  commentId: T:SearchifyEngine.Database.DbClient
+  name: DbClient
+  nameWithType: DbClient
+  fullName: SearchifyEngine.Database.DbClient

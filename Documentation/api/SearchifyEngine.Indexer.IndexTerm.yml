@@ -1,0 +1,586 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchifyEngine.Indexer.IndexTerm
+  commentId: T:SearchifyEngine.Indexer.IndexTerm
+  id: IndexTerm
+  parent: SearchifyEngine.Indexer
+  children:
+  - SearchifyEngine.Indexer.IndexTerm.#ctor(System.UInt32)
+  - SearchifyEngine.Indexer.IndexTerm.AddPositions(System.UInt32[])
+  - SearchifyEngine.Indexer.IndexTerm.FileDelta
+  - SearchifyEngine.Indexer.IndexTerm.Frequency
+  - SearchifyEngine.Indexer.IndexTerm.Positions
+  langs:
+  - csharp
+  - vb
+  name: IndexTerm
+  nameWithType: IndexTerm
+  fullName: SearchifyEngine.Indexer.IndexTerm
+  type: Class
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/IndexTerm.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: IndexTerm
+    path: ../SearchifyEngine/Indexer/IndexTerm.cs
+    startLine: 8
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nIndex term representation, stores file delta, frequency and positions of word\n"
+  example: []
+  syntax:
+    content: public class IndexTerm
+    content.vb: Public Class IndexTerm
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: SearchifyEngine.Indexer.IndexTerm.FileDelta
+  commentId: F:SearchifyEngine.Indexer.IndexTerm.FileDelta
+  id: FileDelta
+  parent: SearchifyEngine.Indexer.IndexTerm
+  langs:
+  - csharp
+  - vb
+  name: FileDelta
+  nameWithType: IndexTerm.FileDelta
+  fullName: SearchifyEngine.Indexer.IndexTerm.FileDelta
+  type: Field
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/IndexTerm.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: FileDelta
+    path: ../SearchifyEngine/Indexer/IndexTerm.cs
+    startLine: 20
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nFile ID delta value\n"
+  example: []
+  syntax:
+    content: public readonly uint FileDelta
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly FileDelta As UInteger
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchifyEngine.Indexer.IndexTerm.#ctor(System.UInt32)
+  commentId: M:SearchifyEngine.Indexer.IndexTerm.#ctor(System.UInt32)
+  id: '#ctor(System.UInt32)'
+  parent: SearchifyEngine.Indexer.IndexTerm
+  langs:
+  - csharp
+  - vb
+  name: IndexTerm(UInt32)
+  nameWithType: IndexTerm.IndexTerm(UInt32)
+  fullName: SearchifyEngine.Indexer.IndexTerm.IndexTerm(System.UInt32)
+  type: Constructor
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/IndexTerm.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: .ctor
+    path: ../SearchifyEngine/Indexer/IndexTerm.cs
+    startLine: 26
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nInstantiates a new IndexTerm object\n"
+  example: []
+  syntax:
+    content: public IndexTerm(uint fileDelta)
+    parameters:
+    - id: fileDelta
+      type: System.UInt32
+      description: delta value
+    content.vb: Public Sub New(fileDelta As UInteger)
+  overload: SearchifyEngine.Indexer.IndexTerm.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchifyEngine.Indexer.IndexTerm.AddPositions(System.UInt32[])
+  commentId: M:SearchifyEngine.Indexer.IndexTerm.AddPositions(System.UInt32[])
+  id: AddPositions(System.UInt32[])
+  parent: SearchifyEngine.Indexer.IndexTerm
+  langs:
+  - csharp
+  - vb
+  name: AddPositions(UInt32[])
+  nameWithType: IndexTerm.AddPositions(UInt32[])
+  fullName: SearchifyEngine.Indexer.IndexTerm.AddPositions(System.UInt32[])
+  type: Method
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/IndexTerm.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: AddPositions
+    path: ../SearchifyEngine/Indexer/IndexTerm.cs
+    startLine: 35
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nSets positions for term\n"
+  example: []
+  syntax:
+    content: public void AddPositions(uint[] positions)
+    parameters:
+    - id: positions
+      type: System.UInt32[]
+      description: array of positions in delta uint array
+    content.vb: Public Sub AddPositions(positions As UInteger())
+  overload: SearchifyEngine.Indexer.IndexTerm.AddPositions*
+  nameWithType.vb: IndexTerm.AddPositions(UInt32())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: SearchifyEngine.Indexer.IndexTerm.AddPositions(System.UInt32())
+  name.vb: AddPositions(UInt32())
+- uid: SearchifyEngine.Indexer.IndexTerm.Positions
+  commentId: P:SearchifyEngine.Indexer.IndexTerm.Positions
+  id: Positions
+  parent: SearchifyEngine.Indexer.IndexTerm
+  langs:
+  - csharp
+  - vb
+  name: Positions
+  nameWithType: IndexTerm.Positions
+  fullName: SearchifyEngine.Indexer.IndexTerm.Positions
+  type: Property
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/IndexTerm.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: Positions
+    path: ../SearchifyEngine/Indexer/IndexTerm.cs
+    startLine: 44
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nArray of positions where term can be found in the document\n"
+  example: []
+  syntax:
+    content: public uint[] Positions { get; }
+    parameters: []
+    return:
+      type: System.UInt32[]
+    content.vb: Public ReadOnly Property Positions As UInteger()
+  overload: SearchifyEngine.Indexer.IndexTerm.Positions*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchifyEngine.Indexer.IndexTerm.Frequency
+  commentId: P:SearchifyEngine.Indexer.IndexTerm.Frequency
+  id: Frequency
+  parent: SearchifyEngine.Indexer.IndexTerm
+  langs:
+  - csharp
+  - vb
+  name: Frequency
+  nameWithType: IndexTerm.Frequency
+  fullName: SearchifyEngine.Indexer.IndexTerm.Frequency
+  type: Property
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/IndexTerm.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: Frequency
+    path: ../SearchifyEngine/Indexer/IndexTerm.cs
+    startLine: 58
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nNumber of occurrences of term in document\n"
+  example: []
+  syntax:
+    content: public uint Frequency { get; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly Property Frequency As UInteger
+  overload: SearchifyEngine.Indexer.IndexTerm.Frequency*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: SearchifyEngine.Indexer
+  commentId: N:SearchifyEngine.Indexer
+  name: SearchifyEngine.Indexer
+  nameWithType: SearchifyEngine.Indexer
+  fullName: SearchifyEngine.Indexer
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: SearchifyEngine.Indexer.IndexTerm.#ctor*
+  commentId: Overload:SearchifyEngine.Indexer.IndexTerm.#ctor
+  name: IndexTerm
+  nameWithType: IndexTerm.IndexTerm
+  fullName: SearchifyEngine.Indexer.IndexTerm.IndexTerm
+- uid: SearchifyEngine.Indexer.IndexTerm.AddPositions*
+  commentId: Overload:SearchifyEngine.Indexer.IndexTerm.AddPositions
+  name: AddPositions
+  nameWithType: IndexTerm.AddPositions
+  fullName: SearchifyEngine.Indexer.IndexTerm.AddPositions
+- uid: System.UInt32[]
+  isExternal: true
+  name: UInt32[]
+  nameWithType: UInt32[]
+  fullName: System.UInt32[]
+  nameWithType.vb: UInt32()
+  fullName.vb: System.UInt32()
+  name.vb: UInt32()
+  spec.csharp:
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: SearchifyEngine.Indexer.IndexTerm.Positions*
+  commentId: Overload:SearchifyEngine.Indexer.IndexTerm.Positions
+  name: Positions
+  nameWithType: IndexTerm.Positions
+  fullName: SearchifyEngine.Indexer.IndexTerm.Positions
+- uid: SearchifyEngine.Indexer.IndexTerm.Frequency*
+  commentId: Overload:SearchifyEngine.Indexer.IndexTerm.Frequency
+  name: Frequency
+  nameWithType: IndexTerm.Frequency
+  fullName: SearchifyEngine.Indexer.IndexTerm.Frequency

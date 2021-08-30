@@ -1,0 +1,2 @@
+# Searchify API Documentation
+

@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchifyEngine.Searcher
+  commentId: N:SearchifyEngine.Searcher
+  id: SearchifyEngine.Searcher
+  children:
+  - SearchifyEngine.Searcher.Pointer
+  - SearchifyEngine.Searcher.Searcher
+  langs:
+  - csharp
+  - vb
+  name: SearchifyEngine.Searcher
+  nameWithType: SearchifyEngine.Searcher
+  fullName: SearchifyEngine.Searcher
+  type: Namespace
+  assemblies:
+  - SearchifyEngine
+references:
+- uid: SearchifyEngine.Searcher.Pointer
+  commentId: T:SearchifyEngine.Searcher.Pointer
+  parent: SearchifyEngine.Searcher
+  name: Pointer
+  nameWithType: Pointer
+  fullName: SearchifyEngine.Searcher.Pointer
+- uid: SearchifyEngine.Searcher.Searcher
+  commentId: T:SearchifyEngine.Searcher.Searcher
+  name: Searcher
+  nameWithType: Searcher
+  fullName: SearchifyEngine.Searcher.Searcher
+- uid: SearchifyEngine.Searcher
+  commentId: N:SearchifyEngine.Searcher
+  name: SearchifyEngine.Searcher
+  nameWithType: SearchifyEngine.Searcher
+  fullName: SearchifyEngine.Searcher

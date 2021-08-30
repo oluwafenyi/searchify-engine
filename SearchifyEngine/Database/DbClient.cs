@@ -5,19 +5,29 @@ using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.CredentialManagement;
 using SearchifyEngine.Store;
 
 namespace SearchifyEngine.Database
 {
+    
+    /// <summary>
+    /// Client library for interactions with DynamoDB
+    /// </summary>
     public static class DbClient
     {
         private static readonly string Host = Config.DatabaseHost;
         private static readonly int Port = Config.DatabasePort;
         private static readonly string EndpointUrl = "http://" + Host + ":" + Port;
-        
-        public static AmazonDynamoDBClient Client;
-        public static InvertedIndexDynamoDbStore Store;
 
+        private static AmazonDynamoDBClient _client;
+        
+        /// <summary>
+        /// <see cref="InvertedIndexDynamoDbStore"/> instance associated with the client
+        /// </summary>
+        public static IStore Store;
+
+        // check if port is currently being used
         private static bool IsPortInUse()
         {
             IPGlobalProperties ipGlobalProperties = IPGlobalProperties.GetIPGlobalProperties();
@@ -32,9 +42,28 @@ namespace SearchifyEngine.Database
 
             return true;
         }
+        
+        // setup aws profile for dyanamodb
+        private static void WriteProfile(string profileName)
+        {
+            var options = new CredentialProfileOptions
+            {
+                AccessKey = Environment.GetEnvironmentVariable("AWS_ACCESS_KEY") ?? "null",
+                SecretKey = Environment.GetEnvironmentVariable("AWS_SECRET_KEY") ?? "null"
+            };
+            var profile = new CredentialProfile(profileName, options);
+            var sharedFile = new SharedCredentialsFile();
+            sharedFile.RegisterProfile(profile);
+        }
 
+        /// <summary>
+        /// Connects to DynamoDB, and instantiates <see cref="DbClient.Store"/> value
+        /// </summary>
+        /// <param name="useLocal">set to true if you are using dynamodblocal</param>
+        /// <returns>status of client creation, true for success, false for failure</returns>
         public static bool CreateClient(bool useLocal)
         {
+            WriteProfile("default");
             if (useLocal)
             {
                 var portUsed = IsPortInUse();
@@ -51,7 +80,7 @@ namespace SearchifyEngine.Database
                 };
                 try
                 {
-                    Client = new AmazonDynamoDBClient(ddbConfig);
+                    _client = new AmazonDynamoDBClient(ddbConfig);
                 }
                 catch (Exception ex)
                 {
@@ -61,20 +90,22 @@ namespace SearchifyEngine.Database
             }
             else
             {
-                Client = new AmazonDynamoDBClient();
+                _client = new AmazonDynamoDBClient();
             }
 
-            Store = new InvertedIndexDynamoDbStore(Client);
+            Store = new InvertedIndexDynamoDbStore(_client);
             return true;
         }
 
-        public static async Task<bool> CheckTableExists(string tableName)
+        // checks if table exists in database
+        private static async Task<bool> CheckTableExists(string tableName)
         {
-            var response = await Client.ListTablesAsync();
+            var response = await _client.ListTablesAsync();
             return response.TableNames.Contains(tableName);
         }
 
-        public static async Task<bool> CreateTable(string tableName, List<AttributeDefinition> tableAttributes,
+        // creates single db table
+        private static async Task<bool> CreateTable(string tableName, List<AttributeDefinition> tableAttributes,
             List<KeySchemaElement> tableKeySchema, ProvisionedThroughput provisionedThroughput)
         {
             bool response = true;
@@ -91,7 +122,7 @@ namespace SearchifyEngine.Database
 
                 try
                 {
-                    await Client.CreateTableAsync(request);
+                    await _client.CreateTableAsync(request);
                 }
                 catch (Exception e)
                 {
@@ -102,6 +133,9 @@ namespace SearchifyEngine.Database
             return response;
         }
         
+        /// <summary>
+        /// Creates necessary database tables if they do not already exist
+        /// </summary>
         public static async Task CreateTables()
         {
             bool status = await CreateTable("inverted_index", new List<AttributeDefinition>
@@ -125,13 +159,18 @@ namespace SearchifyEngine.Database
             });
         }
 
+        /// <summary>
+        /// Provides TableDescription for table specified. If table doesn't exist, null is returned.
+        /// </summary>
+        /// <param name="tableName">table name</param>
+        /// <returns>table description</returns>
         public static async Task<TableDescription> GetTableDescription(string tableName)
         {
             TableDescription result = null;
 
             try
             {
-                var response = await Client.DescribeTableAsync(tableName);
+                var response = await _client.DescribeTableAsync(tableName);
                 result = response.Table;
             }
             catch (Exception e)

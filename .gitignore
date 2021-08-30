@@ -3,6 +3,10 @@ packages/
 .idea/
 bin/
 obj/
-repository/
-*.bin
-*.json
+_site/
+_site_pdf/
+/**/DROP/
+/**/TEMP/
+/**/packages/
+/**/bin/
+/**/obj/

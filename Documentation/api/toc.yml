@@ -1,0 +1,54 @@
+### YamlMime:TableOfContent
+- uid: SearchifyEngine
+  name: SearchifyEngine
+  items:
+  - uid: SearchifyEngine.Config
+    name: Config
+  - uid: SearchifyEngine.Utils
+    name: Utils
+- uid: SearchifyEngine.Database
+  name: SearchifyEngine.Database
+  items:
+  - uid: SearchifyEngine.Database.DbClient
+    name: DbClient
+- uid: SearchifyEngine.Indexer
+  name: SearchifyEngine.Indexer
+  items:
+  - uid: SearchifyEngine.Indexer.ExtractDoc
+    name: ExtractDoc
+  - uid: SearchifyEngine.Indexer.Indexer
+    name: Indexer
+  - uid: SearchifyEngine.Indexer.IndexTerm
+    name: IndexTerm
+  - uid: SearchifyEngine.Indexer.IndexTermJsonConverter
+    name: IndexTermJsonConverter
+- uid: SearchifyEngine.Ranker
+  name: SearchifyEngine.Ranker
+  items:
+  - uid: SearchifyEngine.Ranker.Ranker
+    name: Ranker
+- uid: SearchifyEngine.Searcher
+  name: SearchifyEngine.Searcher
+  items:
+  - uid: SearchifyEngine.Searcher.Pointer
+    name: Pointer
+  - uid: SearchifyEngine.Searcher.Searcher
+    name: Searcher
+- uid: SearchifyEngine.Store
+  name: SearchifyEngine.Store
+  items:
+  - uid: SearchifyEngine.Store.InvertedIndexDynamoDbStore
+    name: InvertedIndexDynamoDbStore
+  - uid: SearchifyEngine.Store.InvertedIndexMemoryStore
+    name: InvertedIndexMemoryStore
+  - uid: SearchifyEngine.Store.IStore
+    name: IStore
+- uid: SearchifyEngine.Tokenizer
+  name: SearchifyEngine.Tokenizer
+  items:
+  - uid: SearchifyEngine.Tokenizer.Stemmer
+    name: Stemmer
+  - uid: SearchifyEngine.Tokenizer.Stopwords
+    name: Stopwords
+  - uid: SearchifyEngine.Tokenizer.Tokenizer
+    name: Tokenizer

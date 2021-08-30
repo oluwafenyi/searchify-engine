@@ -7,6 +7,13 @@ namespace SearchifyEngine.Test
     public class UtilsTests
     {
         [Test]
+        public void TestCleanText()
+        {
+            string dirty = "Hello % world  . This text is dirty !";
+            Assert.AreEqual("hello world this text is dirty", Utils.CleanText(dirty));
+        }
+        
+        [Test]
         public void TestDeltaListConversion()
         {
             List<uint> list = new List<uint> {1, 2, 3, 4, 5};

@@ -1,0 +1,40 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchifyEngine.Store
+  commentId: N:SearchifyEngine.Store
+  id: SearchifyEngine.Store
+  children:
+  - SearchifyEngine.Store.InvertedIndexDynamoDbStore
+  - SearchifyEngine.Store.InvertedIndexMemoryStore
+  - SearchifyEngine.Store.IStore
+  langs:
+  - csharp
+  - vb
+  name: SearchifyEngine.Store
+  nameWithType: SearchifyEngine.Store
+  fullName: SearchifyEngine.Store
+  type: Namespace
+  assemblies:
+  - SearchifyEngine
+references:
+- uid: SearchifyEngine.Store.InvertedIndexDynamoDbStore
+  commentId: T:SearchifyEngine.Store.InvertedIndexDynamoDbStore
+  name: InvertedIndexDynamoDbStore
+  nameWithType: InvertedIndexDynamoDbStore
+  fullName: SearchifyEngine.Store.InvertedIndexDynamoDbStore
+- uid: SearchifyEngine.Store.InvertedIndexMemoryStore
+  commentId: T:SearchifyEngine.Store.InvertedIndexMemoryStore
+  name: InvertedIndexMemoryStore
+  nameWithType: InvertedIndexMemoryStore
+  fullName: SearchifyEngine.Store.InvertedIndexMemoryStore
+- uid: SearchifyEngine.Store.IStore
+  commentId: T:SearchifyEngine.Store.IStore
+  parent: SearchifyEngine.Store
+  name: IStore
+  nameWithType: IStore
+  fullName: SearchifyEngine.Store.IStore
+- uid: SearchifyEngine.Store
+  commentId: N:SearchifyEngine.Store
+  name: SearchifyEngine.Store
+  nameWithType: SearchifyEngine.Store
+  fullName: SearchifyEngine.Store

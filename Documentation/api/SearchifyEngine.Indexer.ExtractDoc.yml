@@ -1,0 +1,442 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchifyEngine.Indexer.ExtractDoc
+  commentId: T:SearchifyEngine.Indexer.ExtractDoc
+  id: ExtractDoc
+  parent: SearchifyEngine.Indexer
+  children:
+  - SearchifyEngine.Indexer.ExtractDoc.Delete(System.String)
+  - SearchifyEngine.Indexer.ExtractDoc.Extract(System.String)
+  langs:
+  - csharp
+  - vb
+  name: ExtractDoc
+  nameWithType: ExtractDoc
+  fullName: SearchifyEngine.Indexer.ExtractDoc
+  type: Class
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/ExtractDoc.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: ExtractDoc
+    path: ../SearchifyEngine/Indexer/ExtractDoc.cs
+    startLine: 12
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nIndexer Utility class for document download\n"
+  example: []
+  syntax:
+    content: public class ExtractDoc
+    content.vb: Public Class ExtractDoc
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: SearchifyEngine.Indexer.ExtractDoc.Extract(System.String)
+  commentId: M:SearchifyEngine.Indexer.ExtractDoc.Extract(System.String)
+  id: Extract(System.String)
+  parent: SearchifyEngine.Indexer.ExtractDoc
+  langs:
+  - csharp
+  - vb
+  name: Extract(String)
+  nameWithType: ExtractDoc.Extract(String)
+  fullName: SearchifyEngine.Indexer.ExtractDoc.Extract(System.String)
+  type: Method
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/ExtractDoc.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: Extract
+    path: ../SearchifyEngine/Indexer/ExtractDoc.cs
+    startLine: 22
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nThis function downloads a document from a valid url\n"
+  example: []
+  syntax:
+    content: public static string Extract(string url)
+    parameters:
+    - id: url
+      type: System.String
+      description: valid document url
+    return:
+      type: System.String
+      description: filepath to downloaded document
+    content.vb: Public Shared Function Extract(url As String) As String
+  overload: SearchifyEngine.Indexer.ExtractDoc.Extract*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: SearchifyEngine.Indexer.ExtractDoc.Delete(System.String)
+  commentId: M:SearchifyEngine.Indexer.ExtractDoc.Delete(System.String)
+  id: Delete(System.String)
+  parent: SearchifyEngine.Indexer.ExtractDoc
+  langs:
+  - csharp
+  - vb
+  name: Delete(String)
+  nameWithType: ExtractDoc.Delete(String)
+  fullName: SearchifyEngine.Indexer.ExtractDoc.Delete(System.String)
+  type: Method
+  source:
+    remote:
+      path: SearchifyEngine/Indexer/ExtractDoc.cs
+      branch: master
+      repo: https://github.com/oluwafenyi/searchify-engine.git
+    id: Delete
+    path: ../SearchifyEngine/Indexer/ExtractDoc.cs
+    startLine: 57
+  assemblies:
+  - SearchifyEngine
+  namespace: SearchifyEngine.Indexer
+  summary: "\nDeletes file at specified path if the file exists\n"
+  example: []
+  syntax:
+    content: public static void Delete(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: absolute file path
+    content.vb: Public Shared Sub Delete(path As String)
+  overload: SearchifyEngine.Indexer.ExtractDoc.Delete*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: SearchifyEngine.Indexer
+  commentId: N:SearchifyEngine.Indexer
+  name: SearchifyEngine.Indexer
+  nameWithType: SearchifyEngine.Indexer
+  fullName: SearchifyEngine.Indexer
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SearchifyEngine.Indexer.ExtractDoc.Extract*
+  commentId: Overload:SearchifyEngine.Indexer.ExtractDoc.Extract
+  name: Extract
+  nameWithType: ExtractDoc.Extract
+  fullName: SearchifyEngine.Indexer.ExtractDoc.Extract
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: SearchifyEngine.Indexer.ExtractDoc.Delete*
+  commentId: Overload:SearchifyEngine.Indexer.ExtractDoc.Delete
+  name: Delete
+  nameWithType: ExtractDoc.Delete
+  fullName: SearchifyEngine.Indexer.ExtractDoc.Delete

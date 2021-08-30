@@ -8,9 +8,19 @@ namespace SearchifyEngine
     /// </summary>
     public static class Config
     {
-        public static readonly string DatabaseHost = Environment.GetEnvironmentVariable("DATABASE_HOST") ?? "localhost";
-        public static readonly int DatabasePort = Environment.GetEnvironmentVariable("DATABASE_PORT") != null ? Convert.ToInt32(Environment.GetEnvironmentVariable("DATABASE_PORT")) : 8000;
+        /// <summary>
+        /// Dynamo database host
+        /// </summary>
+        public static readonly string DatabaseHost = Environment.GetEnvironmentVariable("DYNAMO_DATABASE_HOST") ?? "localhost";
         
+        /// <summary>
+        /// Dynamo database port
+        /// </summary>
+        public static readonly int DatabasePort = Environment.GetEnvironmentVariable("DYNAMO_DATABASE_PORT") != null ? Convert.ToInt32(Environment.GetEnvironmentVariable("DYNAMO_DATABASE_PORT")) : 8000;
+        
+        /// <summary>
+        /// Codec for integer compression
+        /// </summary>
         public static readonly Codec Codec = new FibonacciCodec();
     }
 }
