@@ -1,4 +1,4 @@
-# Searchify Indexer Service
+# Searchify Engine
 
 
 This is a C# Class Library developed as part of school coursework.
