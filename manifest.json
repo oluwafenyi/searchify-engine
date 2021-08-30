@@ -1,0 +1,404 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/oluwafenyi/CSC-322 Assignments/SearchifyEngine/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Config.html",
+          "hash": "P8KXk+am0KXSx9nbZnElTacqGyNyiOE1IyhupZi7Rq0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Database.DbClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Database.DbClient.html",
+          "hash": "DsZaxE3vL2phf7qsKLgM2oKeRndgzLOsxxBqaOchE4I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Database.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Database.html",
+          "hash": "tHk++9wU8j3kH8/Ep7C6QSCvI+zcvDt92S2nTtCnSnQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Indexer.ExtractDoc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Indexer.ExtractDoc.html",
+          "hash": "4SkYaBsPQfOrDuO0L40q8OxTbNokoVIxWS8GRoUvz8k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Indexer.IndexTerm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Indexer.IndexTerm.html",
+          "hash": "mw+ts8KC7FWlacJo/v3+yGtGKkRtSSOFYhDzxyYhL9o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Indexer.IndexTermJsonConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Indexer.IndexTermJsonConverter.html",
+          "hash": "3JAp6CWYUD3x86amZ4fcK4x802wTXOOHZ75v/yPBXLs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Indexer.Indexer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Indexer.Indexer.html",
+          "hash": "Wqo9B9k9RslbzwEYvPLM6xXKqiMEBjBmR1Np33bOHRM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Indexer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Indexer.html",
+          "hash": "j15pGn638e36HApS9TzLpPDViIXGsq/Sgwh4JtMTlSc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Ranker.Ranker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Ranker.Ranker.html",
+          "hash": "Hh5rF3xejzrZfYVq4JPKqhjeaJDUl2OzUcCMj0GG5r4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Ranker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Ranker.html",
+          "hash": "5vW6H/97kKqICASU3dQOLW62mFH3Xz4aM7lIEAUFP34="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Searcher.Pointer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Searcher.Pointer.html",
+          "hash": "okqoYDcI0G7g1IwC2jwh9go5Zwcds/tptHWn08w2Q0M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Searcher.Searcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Searcher.Searcher.html",
+          "hash": "cuJQSgUkFaCFI1PWUQID+cZUi+hicJ52khQRsAeBUPg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Searcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Searcher.html",
+          "hash": "h237XRVgi7tzsGjX7bGj2nr9BmJ2o4F9mUy/sIg/KVI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Store.IStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Store.IStore.html",
+          "hash": "fN4VhHgT3cIcsN+02c2SWNGpeVR/gz3vnMYIjb+XyLg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Store.InvertedIndexDynamoDbStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Store.InvertedIndexDynamoDbStore.html",
+          "hash": "YpoQb/dGTu8I96AkCunZhJ7NgKTKqKzxwoc2QsqQrYQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Store.InvertedIndexMemoryStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Store.InvertedIndexMemoryStore.html",
+          "hash": "a7DhdF5COAl1XK02ptcuZoMcLHESVJV1gGZoi16+2WU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Store.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Store.html",
+          "hash": "apESo5dHRR4PO4uvHm42EE1wUPdj3HOJuv3FltnnukU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Tokenizer.Stemmer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Tokenizer.Stemmer.html",
+          "hash": "7SFXD6QWc9VnKcYzisVM65uDuJczOsaA2k+uZpjBqAo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Tokenizer.Stopwords.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Tokenizer.Stopwords.html",
+          "hash": "B1tXSdqJKwzNJ4o9Ydbjm6DRHZMD88j49HPaAd+d/zY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Tokenizer.Tokenizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Tokenizer.Tokenizer.html",
+          "hash": "5BJmI+av99o9mKiYFnfPlBqTSzDYvxnee+1AqIHYuFQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Tokenizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Tokenizer.html",
+          "hash": "LsJWF9HOxzuQRSoASQuaptnGtH0kFWh4E/nJhqIimJo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.Utils.html",
+          "hash": "cKL2hY/eX1yHstFnQXchFyskObaYMSwj+e4hBxUF96k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchifyEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchifyEngine.html",
+          "hash": "2Qpq4DFmSDgo4pTON64ndjB7Ce4Dlaf3GnwRKZ9uZzs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "6FgbXXu6VM99PQJOwC1dXu9eqXpLZCmSZeuwbCuvwmk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "hBnPzAaQdVG2K7GkbS5PHuAPkToW/NcHds0mz++BEAs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "N9JVX2O9N7Pp2UUn3O3KRP7yLd2+LPyuRM3gnmtAE7U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "Eyxx4cPqtJFpPXJRdorJy+Cg2bwT6gaF4a0xAptnnt4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "WSuRrYiGwKKMbtdG9z8W9fXmLoCyTnGg9AxbPKLXm2Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 23,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
